@@ -4,7 +4,8 @@
   <artifactId>kamstrup-integration</artifactId>
   <packaging>jar</packaging>
   <version>1.0</version>
-  <name>kamstrup-integration</name>
+  <!-- <name>kamstrup-integration</name> -->
+
   <url>http://maven.apache.org</url>
   <dependencies>
 
