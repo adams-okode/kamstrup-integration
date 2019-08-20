@@ -2,6 +2,7 @@ package com.kaiote.kamstrupint;
 
 import com.kaiote.kamstrupint.data.Key;
 import com.kaiote.kamstrupint.data.PackIDD;
+import com.kaiote.kamstrupint.data.PackageContent;
 import com.kaiote.kamstrupint.data.SigFoxStructure;
 import com.kaiote.kamstrupint.helpers.DataAssigner;
 import com.kaiote.kamstrupint.helpers.DataClassifier;
@@ -24,6 +25,10 @@ public class Kamstrup {
     public Key keyData = new Key();
 
     public Separator separator = new Separator();
+
+    public PackIDDRespones packIDDRespones;
+
+    public PackageContent packageContent;
 
     /**
      * 
@@ -57,8 +62,20 @@ public class Kamstrup {
         PackIDD packaged = DataClassifier.packIDDClassifier(binaryPackID);
         PackIDDRespones assigned = DataAssigner.packIDDResponseAssigner(packaged);
 
-        System.out.println(assigned.toString());
+        this.packIDDRespones = assigned;
 
+        return this;
+    }
+
+    /**
+     * 
+     * @return
+     * @throws Exception
+     */
+    public Kamstrup getpackageContentParameters() throws Exception {
+        this.packageContent = DataClassifier.packageContentClassifier(
+                this.separator.splitSections(this.decryptor.decryptedText, 0, 16), this.packIDDRespones);
+        System.out.println(this.separator.splitSections(this.decryptor.decryptedText, 0, 16));
         return this;
     }
 }
