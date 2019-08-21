@@ -50,7 +50,7 @@ Device PAC Meter Number
 007D47BC1C2FEBF6D5837DAD 57722719
 ```
 
-Sigfox received message:
+## Sigfox received message:
 
 Structure of Sigfox message, showing fields, field lengths and content:
 

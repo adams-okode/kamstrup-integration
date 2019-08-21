@@ -1,5 +1,6 @@
 package com.kaiote.kamstrupint;
 
+import com.kaiote.kamstrupint.data.InfoCodes;
 import com.kaiote.kamstrupint.data.Key;
 import com.kaiote.kamstrupint.data.PackIDD;
 import com.kaiote.kamstrupint.data.PackageContent;
@@ -30,6 +31,8 @@ public class Kamstrup {
 
     public PackageContent packageContent;
 
+    public InfoCodes infoCodes;
+
     /**
      * 
      * @param AEScnt
@@ -46,6 +49,12 @@ public class Kamstrup {
         this.decryptor = new Decryptor(this.sigFoxStructure.getAESCnt(), this.keyData.getDekKey());
 
         this.decryptor.decrypt(this.sigFoxStructure.getEncryptedPayload());
+
+        this.getDataTypeParameters();
+
+        this.getpackageContentParameters();
+
+        this.getInfoCodesStatus();
     }
 
     /**
@@ -75,7 +84,12 @@ public class Kamstrup {
     public Kamstrup getpackageContentParameters() throws Exception {
         this.packageContent = DataClassifier.packageContentClassifier(
                 this.separator.splitSections(this.decryptor.decryptedText, 0, 16), this.packIDDRespones);
-        System.out.println(this.separator.splitSections(this.decryptor.decryptedText, 0, 16));
+        return this;
+    }
+
+    public Kamstrup getInfoCodesStatus() throws Exception {
+        this.infoCodes = DataClassifier.infoCodeClassifier(this.packageContent.infoCode);
+        System.out.print(this.infoCodes.toString());
         return this;
     }
 }
