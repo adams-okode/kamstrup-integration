@@ -179,3 +179,9 @@ nights
 ## 0000000001110001
 
 
+-----------------
+
+## How To run 
+```bash
+java -jar kamstrup-integration-1.0.jar 353822AAC8268976952DC4AD2F9FFEF3 c107138f67c5399441bd137a
+```

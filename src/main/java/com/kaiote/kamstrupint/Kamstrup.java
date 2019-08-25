@@ -72,6 +72,7 @@ public class Kamstrup {
         PackIDDRespones assigned = DataAssigner.packIDDResponseAssigner(packaged);
 
         this.packIDDRespones = assigned;
+        System.out.print(this.packIDDRespones.toString());
 
         return this;
     }
@@ -84,6 +85,8 @@ public class Kamstrup {
     public Kamstrup getpackageContentParameters() throws Exception {
         this.packageContent = DataClassifier.packageContentClassifier(
                 this.separator.splitSections(this.decryptor.decryptedText, 0, 16), this.packIDDRespones);
+        System.out.print(this.packageContent.toString());
+
         return this;
     }
 

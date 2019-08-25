@@ -7,8 +7,13 @@ package com.kaiote.kamstrupint;
 public class App {
 
     public static void main(String[] args) {
+        String key = args[0];
+        String message = args[1];
         try {
-            Kamstrup kamstrup = new Kamstrup("C2E387277E39C9D821F3B05E1616F87C", "c164ed406d8d6f1d8715f739");
+            Kamstrup kamstrup = new Kamstrup(key, message);
+            kamstrup.toString();
+            // Kamstrup kamstrup = new Kamstrup("353822AAC8268976952DC4AD2F9FFEF3",
+            // "c107138f67c5399441bd137a");
         } catch (Exception e) {
             e.printStackTrace();
         }
