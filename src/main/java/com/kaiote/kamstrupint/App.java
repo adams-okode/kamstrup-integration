@@ -11,8 +11,6 @@ public class App {
         try {
             Kamstrup kamstrup = new Kamstrup(key, message);
             kamstrup.toString();
-            // Kamstrup kamstrup = new Kamstrup("353822AAC8268976952DC4AD2F9FFEF3",
-            // "c107138f67c5399441bd137a");
         } catch (Exception e) {
             e.printStackTrace();
         }
