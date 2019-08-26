@@ -60,7 +60,7 @@ public class SigFoxStructure {
 
     @Override
     public String toString() {
-        return "{" + " packID='" + getPackID() + "'" + ", AESCnt='" + getAESCnt() + "'" + ", encryptedPayload='"
+        return "{" + " packID:'" + getPackID() + "'" + ", AESCnt:'" + getAESCnt() + "'" + ", encryptedPayload:'"
                 + getEncryptedPayload() + "'" + "}";
     }
 

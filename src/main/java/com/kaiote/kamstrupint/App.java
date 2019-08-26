@@ -2,7 +2,6 @@ package com.kaiote.kamstrupint;
 
 /**
  * Hello world!
- *
  */
 public class App {
 

@@ -85,8 +85,8 @@ public class PackIDD {
 
     @Override
     public String toString() {
-        return "{" + " decimals='" + getDecimals() + "'" + ", units='" + getUnits() + "'" + ", log='" + getLog() + "'"
-                + ", packageType='" + getPackageType() + "'" + "}";
+        return "{" + " decimals:'" + getDecimals() + "'" + ", units:'" + getUnits() + "'" + ", log:'" + getLog() + "'"
+                + ", packageType:'" + getPackageType() + "'" + "}";
     }
 
 }

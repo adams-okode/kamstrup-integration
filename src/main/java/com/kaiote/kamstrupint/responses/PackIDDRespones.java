@@ -77,8 +77,8 @@ public class PackIDDRespones {
 
     @Override
     public String toString() {
-        return "{" + " loggingFrequency='" + getLoggingFrequency() + "'" + ", resultDecimalPlaces='"
-                + getResultDecimalPlaces() + "'" + ", unitStructure='" + getUnitStructure() + "'" + ", packageType='"
+        return "{" + " loggingFrequency:'" + getLoggingFrequency() + "'" + ", resultDecimalPlaces:'"
+                + getResultDecimalPlaces() + "'" + ", unitStructure:'" + getUnitStructure() + "'" + ", packageType:'"
                 + getPackageType() + "'" + "}";
     }
 

@@ -121,10 +121,10 @@ public class PackageContent {
 
     @Override
     public String toString() {
-        return "{" + " volume='" + getVolume() + "'" + ", infoCode='" + getInfoCode() + "'" + ", minFlow='"
-                + getMinFlow() + "'" + ", maxFlow='" + getMaxFlow() + "'" + ", minWaterTemperature='"
-                + getMinWaterTemperature() + "'" + ", minAmbientrTemperature='" + getMinAmbientrTemperature() + "'"
-                + ", maxAmbientTemperature='" + getMaxAmbientTemperature() + "'" + "}";
+        return "{" + " volume:'" + getVolume() + "'" + ", infoCode:'" + getInfoCode() + "'" + ", minFlow:'"
+                + getMinFlow() + "'" + ", maxFlow:'" + getMaxFlow() + "'" + ", minWaterTemperature:'"
+                + getMinWaterTemperature() + "'" + ", minAmbientrTemperature:'" + getMinAmbientrTemperature() + "'"
+                + ", maxAmbientTemperature:'" + getMaxAmbientTemperature() + "'" + "}";
     }
 
 }

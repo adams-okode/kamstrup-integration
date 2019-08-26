@@ -1,5 +1,6 @@
 package com.kaiote.kamstrupint;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kaiote.kamstrupint.data.InfoCodes;
 import com.kaiote.kamstrupint.data.Key;
 import com.kaiote.kamstrupint.data.PackIDD;
@@ -32,6 +33,8 @@ public class Kamstrup {
     public PackageContent packageContent;
 
     public InfoCodes infoCodes;
+
+    public ObjectMapper Obj = new ObjectMapper();
 
     /**
      * 
@@ -72,7 +75,9 @@ public class Kamstrup {
         PackIDDRespones assigned = DataAssigner.packIDDResponseAssigner(packaged);
 
         this.packIDDRespones = assigned;
-        System.out.print(this.packIDDRespones.toString());
+        String jsonStr = this.Obj.writeValueAsString(this.packIDDRespones);
+        System.out.print(jsonStr);
+        System.out.print("|||");
 
         return this;
     }
@@ -85,14 +90,17 @@ public class Kamstrup {
     public Kamstrup getpackageContentParameters() throws Exception {
         this.packageContent = DataClassifier.packageContentClassifier(
                 this.separator.splitSections(this.decryptor.decryptedText, 0, 16), this.packIDDRespones);
-        System.out.print(this.packageContent.toString());
+        String jsonStr = this.Obj.writeValueAsString(this.packageContent);
+        System.out.print(jsonStr);
+        System.out.print("|||");
 
         return this;
     }
 
     public Kamstrup getInfoCodesStatus() throws Exception {
         this.infoCodes = DataClassifier.infoCodeClassifier(this.packageContent.infoCode);
-        System.out.print(this.infoCodes.toString());
+        String jsonStr = this.Obj.writeValueAsString(this.infoCodes);
+        System.out.print(jsonStr);
         return this;
     }
 }

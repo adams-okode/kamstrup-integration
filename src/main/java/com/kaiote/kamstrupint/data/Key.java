@@ -1,7 +1,7 @@
 package com.kaiote.kamstrupint.data;
 
 /**
- * Key Definitio Class This will be provided By Kamstrup
+ * Key Definition Class This will be provided By Kamstrup
  * 
  */
 public class Key {
